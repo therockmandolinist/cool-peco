@@ -1,8 +1,8 @@
-##
+# -*- mode: sh -*-
 # select ssh host from ~/.ssh/config
 #
 local res
-res=$(grep "Host " ~/.ssh/config | grep -v '*' | cut -b 6- | peco)
+res=$(grep "Host " ~/.ssh/config | grep -v '*' | cut -b 6- | peco --prompt="[ssh]")
 if [ -n "$res" ]; then
   _cool-peco-insert-command-line "ssh $res"
 fi

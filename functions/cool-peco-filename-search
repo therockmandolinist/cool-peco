@@ -1,6 +1,6 @@
-##
+# -*- mode: sh -*-
 # file name search
 #
 local res
-res=$(find . -name "*${1}*" | grep -v "/\." | peco)
+res=$(find . -name "*${1}*" | grep -v "/\." | peco --prompt="[find]")
 _cool-peco-insert-command-line $res

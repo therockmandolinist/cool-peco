@@ -1,4 +1,4 @@
-##
+# -*- mode: sh -*-
 # select command history
 #
 local res tailr
@@ -6,5 +6,5 @@ tailr="tail -r"
 if which "tac" > /dev/null 2>&1; then
   tailr="tac"
 fi
-res=$(fc -l -n 1 | eval $tailr | peco)
+res=$(fc -l -n 1 | eval $tailr | peco --prompt="[history]")
 _cool-peco-insert-command-line $res

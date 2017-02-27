@@ -1,6 +1,6 @@
-##
+# -*- mode: sh -*-
 # select git log
 #
 local res
-res=$(git log --oneline --decorate=full | peco | awk '{print $1}')
+res=$(git log --oneline --decorate=full | peco --prompt="[log]" | awk '{print $1}')
 _cool-peco-insert-command-line $res
