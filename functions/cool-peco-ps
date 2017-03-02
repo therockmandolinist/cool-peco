@@ -2,5 +2,9 @@
 # select pid by `ps aux`
 #
 local res
-res=$(ps aux | tail -n +2 | peco --prompt="[ps]"| awk '{print $2}')
+# res=$(ps aux | tail -n +2 | peco --prompt="[ps]"| awk '{print $2}')
+res=$(ps axco user,pid,%cpu,%mem,start,time,command |
+          tail -n +2 |
+          peco --prompt="[ps]" |
+          awk '{print $2}')
 _cool-peco-insert-at-point $res
