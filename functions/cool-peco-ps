@@ -3,4 +3,4 @@
 #
 local res
 res=$(ps aux | tail -n +2 | peco --prompt="[ps]"| awk '{print $2}')
-_cool-peco-insert-command-line $res
+_cool-peco-insert-at-point $res
