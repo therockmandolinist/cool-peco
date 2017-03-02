@@ -1,3 +1,4 @@
+# -*- mode: sh -*-
 if zle; then
   BUFFER=$1
   CURSOR=$#BUFFER

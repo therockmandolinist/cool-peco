@@ -1,8 +1,8 @@
+# -*- mode: sh -*-
 function() {
   for dir in ${^fpath}/../cool-peco/{utils,functions,customs}(N-/); do
     FPATH=$FPATH:$dir
   done
-  autoload -Uz _cool-peco-insert-command-line
 
   local file f
   for file in ${^fpath}/../cool-peco/{utils,functions,customs}/*(N-.); do

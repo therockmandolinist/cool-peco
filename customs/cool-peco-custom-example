@@ -1,3 +1,4 @@
+# -*- mode: sh -*-
 local result=$(ls | peco)
 
 if [ -n "$result" ]; then
