@@ -5,5 +5,6 @@ local res
 
 
 res=$(rg --files --no-ignore --hidden -g "!{.git,node_modules}/*" 2>/dev/null |
-          peco --prompt="[find]")
+          peco --prompt="[find]" |
+          tr '\n' ' ')
 _cool-peco-insert-at-point  $res
