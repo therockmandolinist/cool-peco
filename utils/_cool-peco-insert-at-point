@@ -1,2 +1,4 @@
 # -*- mode: sh -*-
-LBUFFER+="$1 "
+if [ -n "$1" ]; then
+    LBUFFER+="$1 "
+fi
