@@ -1,4 +1,6 @@
 # -*- mode: sh -*-
-if [ -n "$1" ]; then
+if [ -n "$1" ] && zle; then
     LBUFFER+="$1 "
+else
+    print -z "$1"
 fi
