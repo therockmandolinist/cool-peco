@@ -1,0 +1,7 @@
+# -*- mode: sh -*-
+# function search
+res=$((alias | cut -f1 -d= ; hash -f; hash -v | cut -f 1 -d= ; typeset +f) |
+          sort |
+          peco --prompt="[function]")
+
+_cool-peco-insert-at-point $res
