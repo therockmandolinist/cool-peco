@@ -4,7 +4,8 @@
 local res
 
 
-res=$(rg --files --no-ignore --hidden -g "!{.git,node_modules}/*" 2>/dev/null |
+res=$(rg --files ~/ 2>/dev/null |
+          awk -v len=$(tput cols) '{ if (length($0) > len-2) print "..." substr($0, length($0)-len+6, length($0)); else print; }' |
           peco --prompt="[find]" |
           xargs -d '\n' printf "%q ")
 _cool-peco-insert-at-point  $res
